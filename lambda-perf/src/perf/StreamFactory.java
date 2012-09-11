@@ -23,10 +23,16 @@ interface StreamFactory {
         return StreamWithReducer.asStream(iterable);
       }
     },
-    METHODHANDLE {
+    MH {
       @Override
       public <T> Stream<T> asStream(Iterable<? extends T> iterable) {
-        return StreamWithMethodHandle.asStream(iterable);
+        return StreamWithMH.asStream(iterable);
+      }
+    },
+    MH2 {
+      @Override
+      public <T> Stream<T> asStream(Iterable<? extends T> iterable) {
+        return StreamWithMH2.asStream(iterable);
       }
     }
   }

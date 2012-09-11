@@ -12,7 +12,7 @@ import java.util.Collection;
 //   (E element, X result) -> X
 //  or
 //   (E element) -> void
-public class StreamWithMethodHandle<T> implements Stream<T> {
+public class StreamWithMH<T> implements Stream<T> {
     static abstract class Node {
       final Node previous; 
       
@@ -26,7 +26,7 @@ public class StreamWithMethodHandle<T> implements Stream<T> {
     final Node node;
     final Iterable<?> iterable;
     
-    private StreamWithMethodHandle(Iterable<?> iterable, Node node) {
+    private StreamWithMH(Iterable<?> iterable, Node node) {
       this.iterable = iterable;
       this.node = node;
     }
@@ -48,7 +48,7 @@ public class StreamWithMethodHandle<T> implements Stream<T> {
     static {
       Lookup lookup = MethodHandles.lookup();
       try {
-        EMPTY = lookup.findStatic(StreamWithMethodHandle.class, "empty", MethodType.methodType(void.class));
+        EMPTY = lookup.findStatic(StreamWithMH.class, "empty", MethodType.methodType(void.class));
         PREDICATE_TEST = lookup.findVirtual(Predicate.class, "test", MethodType.methodType(boolean.class, Object.class));
         MAPPER_MAP = lookup.findVirtual(Mapper.class, "map", MethodType.methodType(Object.class, Object.class));
         BINARYOPERATOR_OPERATE = lookup.findVirtual(BinaryOperator.class, "operate", MethodType.methodType(Object.class, Object.class, Object.class));
@@ -75,7 +75,7 @@ public class StreamWithMethodHandle<T> implements Stream<T> {
     
     @Override
     public Stream<T> filter(final Predicate<? super T> predicate) {
-      return new StreamWithMethodHandle<>(iterable, new Node(node) {
+      return new StreamWithMH<>(iterable, new Node(node) {
         @Override
         public MethodHandle chain(MethodHandle mh) {
           MethodType type = mh.type();
@@ -95,7 +95,7 @@ public class StreamWithMethodHandle<T> implements Stream<T> {
     
     @Override
     public <R> Stream<R> map(final Mapper<? super T, ? extends R> mapper) {
-      return new StreamWithMethodHandle<>(iterable, new Node(node) {
+      return new StreamWithMH<>(iterable, new Node(node) {
         @Override
         public MethodHandle chain(MethodHandle mh) {
           MethodType type = mh.type();
@@ -256,6 +256,6 @@ public class StreamWithMethodHandle<T> implements Stream<T> {
     }
     
     public static <T> Stream<T> asStream(Iterable<? extends T> iterable) {
-      return new StreamWithMethodHandle<>(iterable, null);
+      return new StreamWithMH<>(iterable, null);
     }
   }
