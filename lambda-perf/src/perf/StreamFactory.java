@@ -23,6 +23,12 @@ interface StreamFactory {
         return StreamWithReducer.asStream(iterable);
       }
     },
+    ADHOC {
+      @Override
+      public <T> Stream<T> asStream(Iterable<? extends T> iterable) {
+        return StreamWithAdhocImpl.asStream(iterable);
+      }
+    },
     MH {
       @Override
       public <T> Stream<T> asStream(Iterable<? extends T> iterable) {

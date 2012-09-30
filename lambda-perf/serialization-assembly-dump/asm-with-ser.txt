@@ -1,0 +1,190 @@
+Code:
+[Entry Point]
+[Verified Entry Point]
+[Constants]
+  # {method} 'createWithSerialization' '()V' in 'serialization/Test'
+  0x00007f8cf480eba0: callq  0x00007f8cfca09190  ;   {runtime_call}
+  0x00007f8cf480eba5: nopw   0x0(%rax,%rax,1)
+  0x00007f8cf480ebb0: mov    %eax,-0x14000(%rsp)
+  0x00007f8cf480ebb7: push   %rbp
+  0x00007f8cf480ebb8: sub    $0x30,%rsp
+  0x00007f8cf480ebbc: mov    0x8(%rsi),%ebp
+  0x00007f8cf480ebbf: mov    0x10(%rsi),%rbx
+  0x00007f8cf480ebc3: mov    %rsi,%rdi
+  0x00007f8cf480ebc6: mov    $0x7f8cfca9c320,%r10
+  0x00007f8cf480ebd0: callq  *%r10
+  0x00007f8cf480ebd3: test   %rbx,%rbx
+  0x00007f8cf480ebd6: je     0x00007f8cf480ecd6
+  0x00007f8cf480ebdc: mov    0x8(%rbx),%r10d
+  0x00007f8cf480ebe0: cmp    $0xc7a010a0,%r10d  ;   {oop({type array int})}
+  0x00007f8cf480ebe7: jne    0x00007f8cf480ed11  ;*synchronization entry
+                                                ; - java.lang.invoke.LambdaForm$DMH/1237346925::newInvokeSpecial_LLI_L@-1
+                                                ; - java.lang.invoke.LambdaForm$BMH/483259330::reinvoke@25
+                                                ; - java.lang.invoke.LambdaForm$MH/137524339::convert@10
+                                                ; - java.lang.invoke.LambdaForm$MH/62800085::invokeExact_MT@11
+                                                ; - serialization.Test::createWithSerialization@15 (line 73)
+  0x00007f8cf480ebed: mov    0xc(%rbx),%edx     ; implicit exception: dispatches to 0x00007f8cf480ed25
+  0x00007f8cf480ebf0: cmp    %edx,%ebp
+  0x00007f8cf480ebf2: jae    0x00007f8cf480ecfd
+  0x00007f8cf480ebf8: mov    %ebp,0x10(%rbx,%rbp,4)  ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+  0x00007f8cf480ebfc: mov    %ebp,%r11d
+  0x00007f8cf480ebff: inc    %r11d              ;*iinc
+                                                ; - serialization.Test::createWithSerialization@25 (line 72)
+  0x00007f8cf480ec02: cmp    %edx,%r11d
+  0x00007f8cf480ec05: jge    0x00007f8cf480ecca  ;*if_icmplt
+                                                ; - serialization.Test::createWithSerialization@31 (line 72)
+  0x00007f8cf480ec0b: add    $0x2,%ebp
+  0x00007f8cf480ec0e: xor    %r10d,%r10d
+  0x00007f8cf480ec11: cmp    %r10d,%ebp
+  0x00007f8cf480ec14: cmovl  %r10d,%ebp
+  0x00007f8cf480ec18: cmp    %edx,%ebp
+  0x00007f8cf480ec1a: cmovg  %edx,%ebp          ;*synchronization entry
+                                                ; - java.lang.invoke.LambdaForm$DMH/1237346925::newInvokeSpecial_LLI_L@-1
+                                                ; - java.lang.invoke.LambdaForm$BMH/483259330::reinvoke@25
+                                                ; - java.lang.invoke.LambdaForm$MH/137524339::convert@10
+                                                ; - java.lang.invoke.LambdaForm$MH/62800085::invokeExact_MT@11
+                                                ; - serialization.Test::createWithSerialization@15 (line 73)
+  0x00007f8cf480ec1d: cmp    %edx,%r11d
+  0x00007f8cf480ec20: jae    0x00007f8cf480ecdd
+  0x00007f8cf480ec26: mov    %r11d,0x10(%rbx,%r11,4)  ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+  0x00007f8cf480ec2b: inc    %r11d              ;*iinc
+                                                ; - serialization.Test::createWithSerialization@25 (line 72)
+  0x00007f8cf480ec2e: cmp    %ebp,%r11d
+  0x00007f8cf480ec31: jl     0x00007f8cf480ec1d  ;*if_icmplt
+                                                ; - serialization.Test::createWithSerialization@31 (line 72)
+  0x00007f8cf480ec33: mov    %edx,%eax
+  0x00007f8cf480ec35: add    $0xfffffffffffffff9,%eax
+  0x00007f8cf480ec38: mov    $0x80000000,%r10d
+  0x00007f8cf480ec3e: cmp    %eax,%edx
+  0x00007f8cf480ec40: cmovl  %r10d,%eax
+  0x00007f8cf480ec44: cmp    %eax,%r11d
+  0x00007f8cf480ec47: jge    0x00007f8cf480ecb1
+  0x00007f8cf480ec49: nopl   0x0(%rax)
+  0x00007f8cf480ec50: mov    %r11d,0x10(%rbx,%r11,4)
+  0x00007f8cf480ec55: movslq %r11d,%r10
+  0x00007f8cf480ec58: mov    %r11d,%r8d
+  0x00007f8cf480ec5b: add    $0x6,%r8d
+  0x00007f8cf480ec5f: mov    %r11d,%r9d
+  0x00007f8cf480ec62: add    $0x5,%r9d
+  0x00007f8cf480ec66: mov    %r11d,%ecx
+  0x00007f8cf480ec69: add    $0x4,%ecx
+  0x00007f8cf480ec6c: mov    %r11d,%edi
+  0x00007f8cf480ec6f: add    $0x3,%edi
+  0x00007f8cf480ec72: mov    %r11d,%esi
+  0x00007f8cf480ec75: add    $0x2,%esi
+  0x00007f8cf480ec78: mov    %r11d,%r13d
+  0x00007f8cf480ec7b: inc    %r13d
+  0x00007f8cf480ec7e: mov    %r13d,0x14(%rbx,%r10,4)
+  0x00007f8cf480ec83: mov    %esi,0x18(%rbx,%r10,4)
+  0x00007f8cf480ec88: mov    %edi,0x1c(%rbx,%r10,4)
+  0x00007f8cf480ec8d: mov    %ecx,0x20(%rbx,%r10,4)
+  0x00007f8cf480ec92: mov    %r9d,0x24(%rbx,%r10,4)
+  0x00007f8cf480ec97: mov    %r8d,0x28(%rbx,%r10,4)  ;*synchronization entry
+                                                ; - java.lang.invoke.LambdaForm$DMH/1237346925::newInvokeSpecial_LLI_L@-1
+                                                ; - java.lang.invoke.LambdaForm$BMH/483259330::reinvoke@25
+                                                ; - java.lang.invoke.LambdaForm$MH/137524339::convert@10
+                                                ; - java.lang.invoke.LambdaForm$MH/62800085::invokeExact_MT@11
+                                                ; - serialization.Test::createWithSerialization@15 (line 73)
+  0x00007f8cf480ec9c: mov    %r11d,%r9d
+  0x00007f8cf480ec9f: add    $0x7,%r9d
+  0x00007f8cf480eca3: mov    %r9d,0x2c(%rbx,%r10,4)  ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+  0x00007f8cf480eca8: add    $0x8,%r11d         ;*iinc
+                                                ; - serialization.Test::createWithSerialization@25 (line 72)
+  0x00007f8cf480ecac: cmp    %eax,%r11d
+  0x00007f8cf480ecaf: jl     0x00007f8cf480ec50  ;*if_icmplt
+                                                ; - serialization.Test::createWithSerialization@31 (line 72)
+  0x00007f8cf480ecb1: cmp    %edx,%r11d
+  0x00007f8cf480ecb4: jge    0x00007f8cf480ecca
+  0x00007f8cf480ecb6: xchg   %ax,%ax            ;*synchronization entry
+                                                ; - java.lang.invoke.LambdaForm$DMH/1237346925::newInvokeSpecial_LLI_L@-1
+                                                ; - java.lang.invoke.LambdaForm$BMH/483259330::reinvoke@25
+                                                ; - java.lang.invoke.LambdaForm$MH/137524339::convert@10
+                                                ; - java.lang.invoke.LambdaForm$MH/62800085::invokeExact_MT@11
+                                                ; - serialization.Test::createWithSerialization@15 (line 73)
+  0x00007f8cf480ecb8: cmp    %edx,%r11d
+  0x00007f8cf480ecbb: jae    0x00007f8cf480ecdd
+  0x00007f8cf480ecbd: mov    %r11d,0x10(%rbx,%r11,4)  ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+  0x00007f8cf480ecc2: inc    %r11d              ;*iinc
+                                                ; - serialization.Test::createWithSerialization@25 (line 72)
+  0x00007f8cf480ecc5: cmp    %edx,%r11d
+  0x00007f8cf480ecc8: jl     0x00007f8cf480ecb8  ;*getstatic MH_WITH_SER
+                                                ; - serialization.Test::createWithSerialization@10 (line 73)
+  0x00007f8cf480ecca: add    $0x30,%rsp
+  0x00007f8cf480ecce: pop    %rbp
+  0x00007f8cf480eccf: test   %eax,0x8a5132b(%rip)        # 0x00007f8cfd260000
+                                                ;   {poll_return}
+  0x00007f8cf480ecd5: retq   
+  0x00007f8cf480ecd6: xor    %ebx,%ebx
+  0x00007f8cf480ecd8: jmpq   0x00007f8cf480ebed
+  0x00007f8cf480ecdd: mov    $0xffffffe4,%esi
+  0x00007f8cf480ece2: mov    %rbx,0x8(%rsp)
+  0x00007f8cf480ece7: mov    %r11d,0x4(%rsp)
+  0x00007f8cf480ecec: mov    %r11d,0x10(%rsp)
+  0x00007f8cf480ecf1: xchg   %ax,%ax
+  0x00007f8cf480ecf3: callq  0x00007f8cf47d6f20  ; OopMap{[8]=Oop off=344}
+                                                ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+                                                ;   {runtime_call}
+  0x00007f8cf480ecf8: callq  0x00007f8cfca09190  ;   {runtime_call}
+  0x00007f8cf480ecfd: mov    $0xffffffe4,%esi
+  0x00007f8cf480ed02: mov    %rbx,0x8(%rsp)
+  0x00007f8cf480ed07: callq  0x00007f8cf47d6f20  ; OopMap{[8]=Oop off=364}
+                                                ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed0c: callq  0x00007f8cfca09190  ;*getstatic MH_WITH_SER
+                                                ; - serialization.Test::createWithSerialization@10 (line 73)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed11: mov    $0xffffffad,%esi
+  0x00007f8cf480ed16: mov    %rbx,(%rsp)
+  0x00007f8cf480ed1a: nop    
+  0x00007f8cf480ed1b: callq  0x00007f8cf47d6f20  ; OopMap{[0]=Oop off=384}
+                                                ;*getstatic MH_WITH_SER
+                                                ; - serialization.Test::createWithSerialization@10 (line 73)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed20: callq  0x00007f8cfca09190  ;*getstatic MH_WITH_SER
+                                                ; - serialization.Test::createWithSerialization@10 (line 73)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed25: mov    $0xfffffff6,%esi
+  0x00007f8cf480ed2a: nop    
+  0x00007f8cf480ed2b: callq  0x00007f8cf47d6f20  ; OopMap{off=400}
+                                                ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed30: callq  0x00007f8cfca09190  ;*iastore
+                                                ; - serialization.Test$ProxySer::run@12 (line 41)
+                                                ; - serialization.Test::createWithSerialization@20 (line 74)
+                                                ;   {runtime_call}
+  0x00007f8cf480ed35: hlt    
+  0x00007f8cf480ed36: hlt    
+  0x00007f8cf480ed37: hlt    
+  0x00007f8cf480ed38: hlt    
+  0x00007f8cf480ed39: hlt    
+  0x00007f8cf480ed3a: hlt    
+  0x00007f8cf480ed3b: hlt    
+  0x00007f8cf480ed3c: hlt    
+  0x00007f8cf480ed3d: hlt    
+  0x00007f8cf480ed3e: hlt    
+  0x00007f8cf480ed3f: hlt    
+[Exception Handler]
+[Stub Code]
+  0x00007f8cf480ed40: jmpq   0x00007f8cf4805ba0  ;   {no_reloc}
+[Deopt Handler Code]
+  0x00007f8cf480ed45: callq  0x00007f8cf480ed4a
+  0x00007f8cf480ed4a: subq   $0x5,(%rsp)
+  0x00007f8cf480ed4f: jmpq   0x00007f8cf47d6b00  ;   {runtime_call}
+  0x00007f8cf480ed54: hlt    
+  0x00007f8cf480ed55: hlt    
+  0x00007f8cf480ed56: hlt    
+  0x00007f8cf480ed57: hlt    
